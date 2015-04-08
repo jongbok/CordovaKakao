@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+id="com.forif.cordova.plugin.kakao.KakaoPlugin"
+version="0.0.1">
+
+<name>KakaoPlugin</name>
+<description>KakaoPlugin</description>
+<author>Jong-Bok,Park</author>
+<keywords>kakao,link</keywords>
+<license>GPL3</license>
+
+<engines>
+    <engine name="cordova" version=">=3.4.0"/>
+</engines>
+
+<js-module src="www/KakaoPlugin.js" name="KakaoPlugin">
+    <clobbers target="KakaoPlugin" />
+</js-module>
+
+<platform name="android">
+	<preference name="API_KEY" />
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="KakaoPlugin">
+            <param name="android-package" value="com.forif.cordova.plugin.kakao.KakaoPlugin"/>
+        </feature>
+    </config-file>
+    
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+    	<uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    	<meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key" />    	
+    </config-file>
+
+	<source-file src="res/values/kakao_colors.xml" target-dir="res/values" />
+	<source-file src="res/values/kakao_dimens.xml" target-dir="res/values" />
+	<source-file src="res/values/kakao_strings.xml" target-dir="res/values" />
+	<source-file src="res/values/kakao_styles.xml" target-dir="res/values" />
+	<source-file src="res/values-ko/kakao_strings.xml" target-dir="res/values-ko" />
+	<config-file target="res/values/kakao_strings.xml" parent="/*">
+		<string name="kakao_app_key">$API_KEY</string>
+		<string name="kakao_scheme">kakao$API_KEY</string>
+	</config-file>
+	<config-file target="res/values-ko/kakao_strings.xml" parent="/*">
+		<string name="kakao_app_key">$API_KEY</string>
+		<string name="kakao_scheme">kakao$API_KEY</string>
+	</config-file>
+	
+	<source-file src="kakao/lib/async-http-client-1.8.3.jar" target-dir="libs/" />
+	<source-file src="kakao/lib/jackson-annotations-2.3.0.jar" target-dir="libs/" />
+	<source-file src="kakao/lib/jackson-core-2.3.1.jar" target-dir="libs/" />
+	<source-file src="kakao/lib/jackson-databind-2.3.1.jar" target-dir="libs/" />
+	<source-file src="kakao/lib/kakao-sdk.jar" target-dir="libs/" />
+	<source-file src="kakao/lib/slf4j-api-1.7.5.jar" target-dir="libs/" />
+    <source-file src="src/android/com/forif/cordova/plugin/kakao/KakaoPlugin.java" target-dir="src/com/forif/cordova/plugin/kakao"/>
+</platform>
+
+</plugin>

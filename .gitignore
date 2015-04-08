@@ -1,0 +1,17 @@
+AndroidManifest.xml
+proguard-project.txt
+project.properties
+gen/*
+assets/*
+bin/*
+kakao/src/*
+libs/*
+res/drawable/*
+res/drawable-hdpi/*
+res/drawable-mdpi/*
+res/drawable-small/*
+res/drawable-xhdpi/*
+res/drawable-xxhdpi/*
+res/layout/*
+res/xml/*
+MyPhoneGapActivity.java
