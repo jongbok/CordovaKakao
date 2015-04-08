@@ -12,6 +12,10 @@ res/drawable-mdpi/*
 res/drawable-small/*
 res/drawable-xhdpi/*
 res/drawable-xxhdpi/*
+res/drawable-ldpi/*
 res/layout/*
 res/xml/*
 MyPhoneGapActivity.java
+.classpath
+.project
+src/android/com/forif/cordova/plugin/kakao/link/*
